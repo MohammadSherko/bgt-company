@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BGT Brands Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #0a1a2b; /* fallback color */
+  background: linear-gradient(135deg, #0a1a2b 0%, #153252 30%, #334e68 70%, #000000 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+      .brand-square {
+        border-radius: 30px;
+      }
+ @keyframes fadeSlideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fade-slide-up {
+    animation: fadeSlideUp 0.8s ease-out both;
+  }
+    </style>
+  </head>
+  <body class="bg-gray-100">
+
+    <!-- HEADER / NAV -->
+    <header class="bg-black fixed top-0 w-full z-50">
+      <nav class="relative flex items-center px-6 py-4 bg-gray-900">
+        <!-- Logo left -->
+        <img src="BGT-co-logo-1000x1000.png" alt="BGT Logo" class="w-10 h-10">
+
+        <!-- Menu centered (desktop only) -->
+        <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 space-x-8 text-white font-medium">
+          <a href="index.html" class="hover:text-yellow-400">Home</a>
+          <a href="#our-products" class="hover:text-yellow-400">Products</a>
+          <a href="ABOUTUS.HTML" class="hover:text-yellow-400">About Us</a>
+          <a href="contact.html" class="hover:text-yellow-400">Contact</a>
+        </div>
+
+        <!-- Hamburger right (mobile only) -->
+        <div class="md:hidden ml-auto relative">
+          <button id="menu-btn" aria-label="Toggle menu" class="focus:outline-none">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+          </button>
+
+          <!-- Mobile menu -->
+          <div id="mobile-menu" class="hidden absolute right-0 mt-2 w-40 bg-gray-800 rounded shadow-lg py-2 text-white font-medium">
+            <a href="#hero" class="block px-4 py-2 hover:bg-yellow-400 hover:text-gray-900 transition">Home</a>
+            <a href="#our-products" class="block px-4 py-2 hover:bg-yellow-400 hover:text-gray-900 transition">Products</a>
+            <a href="#about-us" class="block px-4 py-2 hover:bg-yellow-400 hover:text-gray-900 transition">About Us</a>
+            <a href="#contact" class="block px-4 py-2 hover:bg-yellow-400 hover:text-gray-900 transition">Contact</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- OUR BRANDS SECTION -->
+    <section class="pt-32 text-center px-4">
+      <h2 class="text-3xl font-bold mb-4 text-yellow-500">Our Brands</h2>
+
+ <p class="text-white max-w-xl mx-auto">
+  Discover a variety of brands we proudly distribute, each known for quality and innovation.
+</p>
+
+    </section>
+
+    <!-- BRAND LOGO GRID -->
+    <section class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-6 px-4 py-12 justify-items-center bg-[#1f2833] text-center fade-slide-up">
+  <!-- Grid content -->
+     <a href="tropia.html" class="w-24 h-24 bg-white shadow-lg brand-square flex items-center justify-center">
+  <img src="logos/tropia.png.png" alt="Tropia" class="w-16 h-16 object-contain" />
+</a>
+      <!-- Duplicate 43 more times -->
+      <!-- Square #2 -->
+      <a href="brand2.html" class="w-24 h-24 bg-white shadow-lg brand-square flex items-center justify-center">
+        <img src="logos/vitamilk.png.png" alt="Brand 2" class="w-16 h-16 object-contain" />
+      </a>
+  <!-- Square #2 -->
+      <a href="brand2.html" class="w-24 h-24 bg-white shadow-lg brand-square flex items-center justify-center">
+        <img src="logos/landessa.png.png" alt="Brand 2" class="w-16 h-16 object-contain" />
+      </a>  <!-- Square #2 -->
+      <a href="brand2.html" class="w-24 h-24 bg-white shadow-lg brand-square flex items-center justify-center">
+        <img src="logos/kex.png.png" alt="Brand 2" class="w-16 h-16 object-contain" />
+      </a>  <!-- Square #2 -->
+      <a href="brand2.html" class="w-24 h-24 bg-white shadow-lg brand-square flex items-center justify-center">
+        <img src="logos/Nom.png.png" alt="Brand 2" class="w-16 h-16 object-contain" />
+      </a>  <!-- Square #2 -->
+      <a href="brand2.html" class="w-24 h-24 bg-white shadow-lg brand-square flex items-center justify-center">
+        <img src="logos/oriental.png.png" alt="Brand 2" class="w-16 h-16 object-contain" />
+      </a>  <!-- Square #2 -->
+      <a href="brand2.html" class="w-24 h-24 bg-white shadow-lg brand-square flex items-center justify-center">
+        <img src="logos/Pfanner.png.png" alt="Brand 2" class="w-16 h-16 object-contain" />
+      </a>  <!-- Square #2 -->
+      <a href="brand2.html" class="w-24 h-24 bg-white shadow-lg brand-square flex items-center justify-center">
+        <img src="logos/shrilalmahal.png" alt="Brand 2" class="w-16 h-16 object-contain" />
+      </a>  <!-- Square #2 -->
+      <a href="brand2.html" class="w-24 h-24 bg-white shadow-lg brand-square flex items-center justify-center">
+        <img src="logos/STDalfour.png.png" alt="Brand 2" class="w-16 h-16 object-contain" />
+      </a>  <!-- Square #2 -->
+      <a href="brand2.html" class="w-24 h-24 bg-white shadow-lg brand-square flex items-center justify-center">
+        <img src="logos/top coco.png.png" alt="Brand 2" class="w-16 h-16 object-contain" />
+      </a>  <!-- Square #2 -->
+      <a href="brand2.html" class="w-24 h-24 bg-white shadow-lg brand-square flex items-center justify-center">
+        <img src="logos/topjuic.png.jpg" alt="Brand 2" class="w-16 h-16 object-contain" />
+      </a>  <!-- Square #2 -->
+      <a href="brand2.html" class="w-24 h-24 bg-white shadow-lg brand-square flex items-center justify-center">
+        <img src="logos/twist.png.png" alt="Brand 2" class="w-16 h-16 object-contain" />
+      </a>  <!-- Square #2 -->
+      <a href="brand2.html" class="w-24 h-24 bg-white shadow-lg brand-square flex items-center justify-center">
+        <img src="logos/Valor.png.png" alt="Brand 2" class="w-16 h-16 object-contain" />
+      </a>  <!-- Square #2 -->
+      <a href="brand2.html" class="w-24 h-24 bg-white shadow-lg brand-square flex items-center justify-center">
+        <img src="logos/Valor.png.png" alt="Brand 2" class="w-16 h-16 object-contain" />
+      </a>  <!-- Square #2 -->
+      <a href="brand2.html" class="w-24 h-24 bg-white shadow-lg brand-square flex items-center justify-center">
+        <img src="logos/vitamilk.png.png" alt="Brand 2" class="w-16 h-16 object-contain" />
+      </a>  <!-- Square #2 -->
+      <a href="brand2.html" class="w-24 h-24 bg-white shadow-lg brand-square flex items-center justify-center">
+        <img src="logos/hello.png.png" alt="Brand 2" class="w-16 h-16 object-contain" />
+      </a>  <!-- Square #2 -->
+      <a href="brand2.html" class="w-24 h-24 bg-white shadow-lg brand-square flex items-center justify-center">
+        <img src="logos/jumex.png.png" alt="Brand 2" class="w-16 h-16 object-contain" />
+      </a>  <!-- Square #2 -->
+      <a href="brand2.html" class="w-24 h-24 bg-white shadow-lg brand-square flex items-center justify-center">
+        <img src="logos/Maharani.logo.png" alt="Brand 2" class="w-16 h-16 object-contain" />
+      </a>  <!-- Square #2 -->
+      <a href="brand2.html" class="w-24 h-24 bg-white shadow-lg brand-square flex items-center justify-center">
+        <img src="logos/natural.png.png" alt="Brand 2" class="w-16 h-16 object-contain" />
+      </a>  <!-- Square #2 -->
+      <a href="brand2.html" class="w-24 h-24 bg-white shadow-lg brand-square flex items-center justify-center">
+        <img src="logos/Crisup.png.webp" alt="Brand 2" class="w-16 h-16 object-contain" />
+      </a>  <!-- Square #2 -->
+      <a href="brand2.html" class="w-24 h-24 bg-white shadow-lg brand-square flex items-center justify-center">
+        <img src="logos/florbu.png.png" alt="Brand 2" class="w-16 h-16 object-contain" />
+      </a>  <!-- Square #2 -->
+      <a href="brand2.html" class="w-24 h-24 bg-white shadow-lg brand-square flex items-center justify-center">
+        <img src="logos/Fontana.png.png" alt="Brand 2" class="w-16 h-16 object-contain" />
+      </a>  <!-- Square #2 -->
+      <a href="brand2.html" class="w-24 h-24 bg-white shadow-lg brand-square flex items-center justify-center">
+        <img src="logos/happyvibes.png.png" alt="Brand 2" class="w-16 h-16 object-contain" />
+      </a>  <!-- Square #2 -->
+      <a href="brand2.html" class="w-24 h-24 bg-white shadow-lg brand-square flex items-center justify-center">
+        <img src="logos/happyvibes.png.png" alt="Brand 2" class="w-16 h-16 object-contain" />
+      </a>  <!-- Square #2 -->
+      <a href="brand2.html" class="w-24 h-24 bg-white shadow-lg brand-square flex items-center justify-center">
+        <img src="logos/hellenergy.png.png" alt="Brand 2" class="w-16 h-16 object-contain" />
+      </a>  <!-- Square #2 -->
+      <a href="brand2.html" class="w-24 h-24 bg-white shadow-lg brand-square flex items-center justify-center">
+        <img src="logos/hello.png.png" alt="Brand 2" class="w-16 h-16 object-contain" />
+      </a>  <!-- Square #2 -->
+      <a href="brand2.html" class="w-24 h-24 bg-white shadow-lg brand-square flex items-center justify-center">
+        <img src="logos/brand2.png" alt="Brand 2" class="w-16 h-16 object-contain" />
+      </a>  <!-- Square #2 -->
+      <a href="brand2.html" class="w-24 h-24 bg-white shadow-lg brand-square flex items-center justify-center">
+        <img src="logos/brand2.png" alt="Brand 2" class="w-16 h-16 object-contain" />
+      </a>  <!-- Square #2 -->
+      <a href="brand2.html" class="w-24 h-24 bg-white shadow-lg brand-square flex items-center justify-center">
+        <img src="logos/brand2.png" alt="Brand 2" class="w-16 h-16 object-contain" />
+      </a>  <!-- Square #2 -->
+      <a href="brand2.html" class="w-24 h-24 bg-white shadow-lg brand-square flex items-center justify-center">
+        <img src="logos/brand2.png" alt="Brand 2" class="w-16 h-16 object-contain" />
+      </a>  <!-- Square #2 -->
+      <a href="brand2.html" class="w-24 h-24 bg-white shadow-lg brand-square flex items-center justify-center">
+        <img src="logos/brand2.png" alt="Brand 2" class="w-16 h-16 object-contain" />
+      </a>  <!-- Square #2 -->
+      <a href="brand2.html" class="w-24 h-24 bg-white shadow-lg brand-square flex items-center justify-center">
+        <img src="logos/brand2.png" alt="Brand 2" class="w-16 h-16 object-contain" />
+      </a>  <!-- Square #2 -->
+      <a href="brand2.html" class="w-24 h-24 bg-white shadow-lg brand-square flex items-center justify-center">
+        <img src="logos/brand2.png" alt="Brand 2" class="w-16 h-16 object-contain" />
+      </a>  <!-- Square #2 -->
+      <a href="brand2.html" class="w-24 h-24 bg-white shadow-lg brand-square flex items-center justify-center">
+        <img src="logos/brand2.png" alt="Brand 2" class="w-16 h-16 object-contain" />
+      </a>  <!-- Square #2 -->
+      <a href="brand2.html" class="w-24 h-24 bg-white shadow-lg brand-square flex items-center justify-center">
+        <img src="logos/brand2.png" alt="Brand 2" class="w-16 h-16 object-contain" />
+      </a>  <!-- Square #2 -->
+      <a href="brand2.html" class="w-24 h-24 bg-white shadow-lg brand-square flex items-center justify-center">
+        <img src="logos/brand2.png" alt="Brand 2" class="w-16 h-16 object-contain" />
+      </a>  <!-- Square #2 -->
+      <a href="brand2.html" class="w-24 h-24 bg-white shadow-lg brand-square flex items-center justify-center">
+        <img src="logos/brand2.png" alt="Brand 2" class="w-16 h-16 object-contain" />
+      </a>  <!-- Square #2 -->
+      <a href="brand2.html" class="w-24 h-24 bg-white shadow-lg brand-square flex items-center justify-center">
+        <img src="logos/brand2.png" alt="Brand 2" class="w-16 h-16 object-contain" />
+      </a>  <!-- Square #2 -->
+      <a href="brand2.html" class="w-24 h-24 bg-white shadow-lg brand-square flex items-center justify-center">
+        <img src="logos/brand2.png" alt="Brand 2" class="w-16 h-16 object-contain" />
+      </a>  <!-- Square #2 -->
+      <a href="brand2.html" class="w-24 h-24 bg-white shadow-lg brand-square flex items-center justify-center">
+        <img src="logos/brand2.png" alt="Brand 2" class="w-16 h-16 object-contain" />
+      </a>  <!-- Square #2 -->
+      <a href="brand2.html" class="w-24 h-24 bg-white shadow-lg brand-square flex items-center justify-center">
+        <img src="logos/brand2.png" alt="Brand 2" class="w-16 h-16 object-contain" />
+      </a>  <!-- Square #2 -->
+      <a href="brand2.html" class="w-24 h-24 bg-white shadow-lg brand-square flex items-center justify-center">
+        <img src="logos/brand2.png" alt="Brand 2" class="w-16 h-16 object-contain" />
+      </a>  <!-- Square #2 -->
+      <a href="brand2.html" class="w-24 h-24 bg-white shadow-lg brand-square flex items-center justify-center">
+        <img src="logos/brand2.png" alt="Brand 2" class="w-16 h-16 object-contain" />
+      </a>  <!-- Square #2 -->
+      <a href="brand2.html" class="w-24 h-24 bg-white shadow-lg brand-square flex items-center justify-center">
+        <img src="logos/brand2.png" alt="Brand 2" class="w-16 h-16 object-contain" />
+      </a>
+      <!-- ... up to #44 -->
+    </section>
+
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener("click", () => {
+          const expanded = menuBtn.getAttribute("aria-expanded") === "true";
+          menuBtn.setAttribute("aria-expanded", (!expanded).toString());
+          mobileMenu.classList.toggle("hidden");
+        });
+
+        mobileMenu.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            mobileMenu.classList.add("hidden");
+            menuBtn.setAttribute("aria-expanded", "false");
+          });
+        });
+      }
+    </script>
+<script>
+  const brands = [
+    { name: "Tropia", img: "logos/tropia.png.png", link: "brands/tropia.html" },
+    { name: "Bomba", img: "logos/bomba.png", link: "brands/bomba.html" },
+    { name: "Kex", img: "logos/kex.png", link: "brands/kex.html" },
+    { name: "Jacker", img: "logos/jacker.png", link: "brands/jacker.html" },
+    // Add all your brands here...
+  ];
+
+  const container = document.querySelector(".grid");
+  brands.forEach(brand => {
+    const a = document.createElement("a");
+    a.href = brand.link;
+    a.className = "w-24 h-24 bg-white shadow-lg brand-square flex items-center justify-center";
+    a.innerHTML = `<img src="${brand.img}" alt="${brand.name}" class="w-16 h-16 object-contain" />`;
+    container.appendChild(a);
+  });
+</script>
+
+  </body>
+</html>

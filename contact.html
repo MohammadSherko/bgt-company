@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Us - Lux Design</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser/dist/email.min.js"></script>
+  <style>
+    body {
+      background: linear-gradient(135deg, #0f172a, #020617);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    @keyframes fadeSlideUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-slide-up {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeSlideUp 0.8s forwards;
+      animation-delay: 0.3s;
+    }
+
+    .btn-gold {
+      background: black;
+      color: #fbbf24;
+      box-shadow: 0 0 10px #fbbf24, 0 0 40px #fbbf24 inset;
+      transition: all 0.4s ease;
+    }
+
+    .btn-gold:hover {
+      box-shadow: 0 0 20px #fbbf24, 0 0 60px #fbbf24 inset;
+      color: #fff;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      box-shadow: 0 0 8px #fbbf24;
+      border-color: #fbbf24;
+      background-color: #111827;
+      color: #fbbf24;
+    }
+/* Intro screen */
+#intro {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #000000, #1a1a1a);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+@keyframes logoZoomFade {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+    filter: blur(8px);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1.2);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+    filter: blur(4px);
+  }
+}
+
+.animate-logo {
+  animation: logoZoomFade 3s ease-in-out forwards;
+}
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .fade-out {
+      opacity: 0;
+      transition: opacity 0.5s ease-out;
+    }
+  </style>
+</head>
+<body class="text-gray-300">
+
+<!-- INTRO ANIMATION -->
+<div id="intro">
+  <img src="BGT-co-logo-1000x1000.png" alt="BGT Logo" class="w-60 h-60 object-contain animate-logo" />
+</div>
+
+
+<!-- Toast Notification -->
+<div id="toast" aria-live="polite" class="fixed bottom-6 right-6 bg-yellow-500 text-black px-4 py-2 rounded shadow-lg hidden z-50">
+  Message sent!
+</div>
+
+<!-- Header -->
+<header class="bg-black fixed top-0 w-full z-50">
+  <nav class="relative flex items-center px-6 py-4 bg-gray-900">
+    <img src="BGT-co-logo-1000x1000.png" alt="BGT Logo" class="w-10 h-10">
+    <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 space-x-8 text-white font-medium">
+      <a href="index.html" class="hover:text-yellow-400">Home</a>
+      <a href="brands.html" class="hover:text-yellow-400">Products</a>
+      <a href="#about-us" class="hover:text-yellow-400">About Us</a>
+      <a href="contact.html" class="hover:text-yellow-400">Contact</a>
+    </div>
+    <div class="md:hidden ml-auto relative">
+      <button id="menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+      </button>
+      <div id="mobile-menu" class="hidden absolute right-0 mt-2 w-40 bg-gray-800 rounded shadow-lg py-2 text-white">
+        <a href="#hero" class="block px-4 py-2 hover:bg-yellow-400 hover:text-gray-900">Home</a>
+        <a href="#our-products" class="block px-4 py-2 hover:bg-yellow-400 hover:text-gray-900">Products</a>
+        <a href="#about-us" class="block px-4 py-2 hover:bg-yellow-400 hover:text-gray-900">About Us</a>
+        <a href="contact.html" class="block px-4 py-2 hover:bg-yellow-400 hover:text-gray-900">Contact</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<section class="max-w-4xl mx-auto py-24 px-6 fade-slide-up">
+  <h1 class="text-yellow-400 text-5xl font-extrabold mb-4 text-center">Contact Us</h1>
+  <p class="text-center mb-12 text-lg text-gray-400">We would love to hear from you!</p>
+
+  <!-- Info Cards -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-16">
+    <div class="bg-yellow-900 bg-opacity-20 p-8 rounded-xl border border-yellow-400">
+      <h3 class="text-xl text-yellow-400 font-bold mb-2">Email</h3>
+      <p><a href="mailto:Info@bgt-company.com">Info@bgt-company.com</a></p>
+    </div>
+    <div class="bg-yellow-900 bg-opacity-20 p-8 rounded-xl border border-yellow-400">
+      <h3 class="text-xl text-yellow-400 font-bold mb-2">Phone</h3>
+      <p><a href="tel:+9647507005070">+964 750 700 5070</a></p>
+    </div>
+    <div class="bg-yellow-900 bg-opacity-20 p-8 rounded-xl border border-yellow-400">
+      <h3 class="text-xl text-yellow-400 font-bold mb-2">Location</h3>
+      <p><a href="https://www.google.com/maps?q=Dream+City,+Erbil,+Iraq" target="_blank">Dream City, Erbil, Iraq</a></p>
+    </div>
+  </div>
+
+  <!-- Contact Form -->
+  <form id="contactForm" class="bg-yellow-900 bg-opacity-10 p-10 rounded-xl border border-yellow-400">
+    <div class="grid md:grid-cols-2 gap-6 mb-6">
+      <div>
+        <label for="firstName" class="text-yellow-400 font-semibold">First Name</label>
+        <input type="text" id="firstName" required class="w-full px-4 py-3 mt-1 bg-gray-900 border border-yellow-600 text-yellow-300 rounded-md placeholder-yellow-500" placeholder="First Name" />
+      </div>
+      <div>
+        <label for="lastName" class="text-yellow-400 font-semibold">Last Name</label>
+        <input type="text" id="lastName" required class="w-full px-4 py-3 mt-1 bg-gray-900 border border-yellow-600 text-yellow-300 rounded-md placeholder-yellow-500" placeholder="Last Name" />
+      </div>
+    </div>
+    <div class="mb-6">
+      <label for="email" class="text-yellow-400 font-semibold">Email</label>
+      <input type="email" id="email" required class="w-full px-4 py-3 mt-1 bg-gray-900 border border-yellow-600 text-yellow-300 rounded-md placeholder-yellow-500" placeholder="Email" />
+    </div>
+    <div class="grid md:grid-cols-2 gap-6 mb-6">
+      <div>
+        <label for="date" class="text-yellow-400 font-semibold">Choose Date</label>
+        <input type="text" id="date" required class="w-full px-4 py-3 mt-1 bg-gray-900 border border-yellow-600 text-yellow-300 rounded-md placeholder-yellow-500" placeholder="Date" />
+      </div>
+      <div>
+        <label for="time" class="text-yellow-400 font-semibold">Choose Time</label>
+        <input type="time" id="time" required class="w-full px-4 py-3 mt-1 bg-gray-900 border border-yellow-600 text-yellow-300 rounded-md placeholder-yellow-500" />
+      </div>
+    </div>
+    <div class="mb-6">
+      <label for="message" class="text-yellow-400 font-semibold">Message</label>
+      <textarea id="message" rows="5" required class="w-full px-4 py-3 mt-1 bg-gray-900 border border-yellow-600 text-yellow-300 rounded-md placeholder-yellow-500" placeholder="Write your message..."></textarea>
+    </div>
+    <button type="submit" class="btn-gold w-full py-3 text-xl font-bold rounded-full" id="submitBtn">Send Message</button>
+  </form>
+</section>
+<section>
+  <!-- Social Media Right - Centered Horizontally -->
+  <div class="bg-transparent flex flex-col items-center text-center">
+    <h3 class="text-lg font-semibold text-yellow-400 mb-4">Follow Us</h3>
+    <div class="flex space-x-4">
+      <a href="https://facebook.com/youraccount" target="_blank" aria-label="Facebook">
+        <img src="s/facebook.png" alt="Facebook" class="w-12 h-12 hover:scale-110 transition-transform">
+      </a>
+      <a href="https://instagram.com/youraccount" target="_blank" aria-label="Instagram">
+        <img src="s/instagram.png" alt="Instagram" class="w-12 h-12 hover:scale-110 transition-transform">
+      </a>
+      <a href="https://snapchat.com/add/youraccount" target="_blank" aria-label="Snapchat">
+        <img src="s/snapchat.png" alt="Snapchat" class="w-12 h-12 hover:scale-110 transition-transform">
+      </a>
+      <a href="https://youtube.com/yourchannel" target="_blank" aria-label="YouTube">
+        <img src="s/youtube.png" alt="YouTube" class="w-12 h-12 hover:scale-110 transition-transform">
+      </a>
+      <a href="https://linkedin.com/in/youraccount" target="_blank" aria-label="LinkedIn">
+        <img src="s/linkedin.png" alt="LinkedIn" class="w-12 h-12 hover:scale-110 transition-transform">
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+<script>
+  // EmailJS Init
+  emailjs.init('YOUR_USER_ID'); // Replace with your actual User ID
+
+  // Toast function
+  function showToast(message) {
+    const toast = document.getElementById('toast');
+    toast.textContent = message;
+    toast.classList.remove('hidden');
+    setTimeout(() => toast.classList.add('hidden'), 3000);
+  }
+
+  // Flatpickr init
+  flatpickr("#date", {
+    minDate: "today",
+    dateFormat: "F j, Y"
+  });
+
+  // Form submission
+  document.getElementById('contactForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const submitBtn = document.getElementById('submitBtn');
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending...";
+
+    const templateParams = {
+      firstName: document.getElementById("firstName").value,
+      lastName: document.getElementById("lastName").value,
+      email: document.getElementById("email").value,
+      date: document.getElementById("date").value,
+      time: document.getElementById("time").value,
+      message: document.getElementById("message").value
+    };
+
+    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+      .then(() => {
+        showToast("Message sent successfully!");
+        document.getElementById('contactForm').reset();
+      })
+      .catch(() => {
+        showToast("Error sending message.");
+      })
+      .finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Send Message";
+      });
+  });
+
+  // Mobile menu
+  document.getElementById("menu-btn").addEventListener("click", () => {
+    const menu = document.getElementById("mobile-menu");
+    const expanded = menu.classList.contains("hidden");
+    menu.classList.toggle("hidden");
+    document.getElementById("menu-btn").setAttribute("aria-expanded", expanded);
+  });
+
+  // Intro screen removal after animation
+  const intro = document.getElementById("intro");
+  if (intro) {
+    setTimeout(() => {
+      intro.style.display = "none";
+    }, 3000); // Match with animation duration
+  }
+</script>
+
+</body>
+</html>

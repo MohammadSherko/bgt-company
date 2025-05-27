@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tropia - BGT</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    :root {
+      --animate-duration: 1.5s;
+    }
+.tropia-glow {
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.8));
+  transition: filter 0.3s ease;
+}
+.tropia-glow:hover {
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 1));
+}
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: linear-gradient(135deg, #0a1a2b, #153252, #334e68, #000000);
+      color: #fff !important;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    a {
+      color: #ffd54f;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+    nav {
+      background-color: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(10px);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 50;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav ul {
+      display: flex;
+      gap: 1.5rem;
+      color: #facc15;
+      font-weight: 600;
+      list-style: none;
+      margin: 0;
+    }
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, padding 0.4s ease;
+        background-color: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(10px);
+      }
+      nav ul.menu-expanded {
+        max-height: 500px;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+      }
+      #mobile-menu-button {
+        display: block;
+      }
+    }
+  @font-face {
+    font-family: 'SoLux';
+    src: url('fonts/SoLux-Regular.woff2') format('woff2'),
+         url('fonts/SoLux-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  </style>
+</head>
+<body>
+
+ <!-- HEADER / NAV -->
+    <header class="bg-black fixed top-0 w-full z-50">
+      <nav class="relative flex items-center px-6 py-4 bg-gray-900">
+        <!-- Logo left -->
+        <img src="BGT-co-logo-1000x1000.png" alt="BGT Logo" class="w-10 h-10">
+
+        <!-- Menu centered (desktop only) -->
+        <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 space-x-8 text-white font-medium">
+          <a href="index.html" class="hover:text-yellow-400">Home</a>
+          <a href="#our-products" class="hover:text-yellow-400">Products</a>
+          <a href="ABOUTUS.HTML" class="hover:text-yellow-400">About Us</a>
+          <a href="contact.html" class="hover:text-yellow-400">Contact</a>
+        </div>
+
+        <!-- Hamburger right (mobile only) -->
+        <div class="md:hidden ml-auto relative">
+          <button id="menu-btn" aria-label="Toggle menu" class="focus:outline-none">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+          </button>
+
+          <!-- Mobile menu -->
+          <div id="mobile-menu" class="hidden absolute right-0 mt-2 w-40 bg-gray-800 rounded shadow-lg py-2 text-white font-medium">
+            <a href="#hero" class="block px-4 py-2 hover:bg-yellow-400 hover:text-gray-900 transition">Home</a>
+            <a href="#our-products" class="block px-4 py-2 hover:bg-yellow-400 hover:text-gray-900 transition">Products</a>
+            <a href="#about-us" class="block px-4 py-2 hover:bg-yellow-400 hover:text-gray-900 transition">About Us</a>
+            <a href="#contact" class="block px-4 py-2 hover:bg-yellow-400 hover:text-gray-900 transition">Contact</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+<br /><br /><br />
+
+<!-- Tropia Intro Section -->
+<section class="flex flex-col md:flex-row items-center justify-center px-8 py-12" data-aos="fade-up">
+  <div class="md:w-1/2 flex justify-center p-6">
+   <img src="logos/tropia.png.png" alt="Tropia Logo" class="w-80 h-auto object-contain tropia-glow" />
+
+  </div>
+  <div class="md:w-1/2 p-6 text-white">
+    <h2 class="text-3xl font-bold mb-6">Tropia Flavored Drinks</h2>
+    <p class="text-lg leading-relaxed">
+      Tropia flavored drinks offer a refreshing and delightful taste experience with a wide range of vibrant
+      flavors, crafted to satisfy every palate. Made with high-quality ingredients, each drink delivers a smooth
+      and fruity burst of flavor, perfect for any occasion. Tropia is a go-to choice for a cool and tasty refreshment.
+      Ideal for enjoying on a hot day or as a sweet treat, Tropia is a must-have beverage in any collection.
+    </p>
+  </div>
+</section>
+
+<!-- Products Grid -->
+<section id="our-products" class="px-8 py-12">
+  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 font-sans" style="font-family: 'SoLux', sans-serif;">
+    
+    <div class="flex flex-col items-center">
+      <img src="Tropia/currant.png" alt="Currant" class="w-full h-auto rounded-lg shadow-md" />
+      <p class="mt-2 text-lg font-semibold" style="color: #C0C0C0;">Currant</p>
+    </div>
+
+    <div class="flex flex-col items-center">
+      <img src="Tropia/ginger-honey.png" alt="Ginger Honey" class="w-full h-auto rounded-lg shadow-md" />
+      <p class="mt-2 text-lg font-semibold" style="color: #C0C0C0;">Ginger Honey</p>
+    </div>
+
+    <div class="flex flex-col items-center">
+      <img src="Tropia/grape-apple.png" alt="Grape Apple" class="w-full h-auto rounded-lg shadow-md" />
+      <p class="mt-2 text-lg font-semibold" style="color: #C0C0C0;">Grape Apple</p>
+    </div>
+
+    <div class="flex flex-col items-center">
+      <img src="Tropia/green-apple.png" alt="Green Apple" class="w-full h-auto rounded-lg shadow-md" />
+      <p class="mt-2 text-lg font-semibold" style="color: #C0C0C0;">Green Apple</p>
+    </div>
+
+    <div class="flex flex-col items-center">
+      <img src="Tropia/hawaii-mix.png" alt="Hawaii Mix" class="w-full h-auto rounded-lg shadow-md" />
+      <p class="mt-2 text-lg font-semibold" style="color: #C0C0C0;">Hawaii Mix</p>
+    </div>
+
+    <div class="flex flex-col items-center">
+      <img src="Tropia/kiwi-lemon.png" alt="Kiwi Lemon" class="w-full h-auto rounded-lg shadow-md" />
+      <p class="mt-2 text-lg font-semibold" style="color: #C0C0C0;">Kiwi Lemon</p>
+    </div>
+
+    <div class="flex flex-col items-center">
+      <img src="Tropia/lychee.png" alt="Lychee" class="w-full h-auto rounded-lg shadow-md" />
+      <p class="mt-2 text-lg font-semibold" style="color: #C0C0C0;">Lychee</p>
+    </div>
+
+    <div class="flex flex-col items-center">
+      <img src="Tropia/mandarin.png" alt="Mandarin" class="w-full h-auto rounded-lg shadow-md" />
+      <p class="mt-2 text-lg font-semibold" style="color: #C0C0C0;">Mandarin</p>
+    </div>
+
+    <div class="flex flex-col items-center">
+      <img src="Tropia/mango-pineapple.png" alt="Mango Pineapple" class="w-full h-auto rounded-lg shadow-md" />
+      <p class="mt-2 text-lg font-semibold" style="color: #C0C0C0;">Mango Pineapple</p>
+    </div>
+
+    <div class="flex flex-col items-center">
+      <img src="Tropia/mojito.png" alt="Mojito" class="w-full h-auto rounded-lg shadow-md" />
+      <p class="mt-2 text-lg font-semibold" style="color: #C0C0C0;">Mojito</p>
+    </div>
+
+    <div class="flex flex-col items-center">
+      <img src="Tropia/peach.png" alt="Peach" class="w-full h-auto rounded-lg shadow-md" />
+      <p class="mt-2 text-lg font-semibold" style="color: #C0C0C0;">Peach</p>
+    </div>
+
+    <div class="flex flex-col items-center">
+      <img src="Tropia/pineapple-coconut.png" alt="Pineapple Coconut" class="w-full h-auto rounded-lg shadow-md" />
+      <p class="mt-2 text-lg font-semibold" style="color: #C0C0C0;">Pineapple Coconut</p>
+    </div>
+
+    <div class="flex flex-col items-center">
+      <img src="Tropia/pomegranate.png" alt="Pomegranate" class="w-full h-auto rounded-lg shadow-md" />
+      <p class="mt-2 text-lg font-semibold" style="color: #C0C0C0;">Pomegranate</p>
+    </div>
+
+    <div class="flex flex-col items-center">
+      <img src="Tropia/strawberry.png" alt="Strawberry" class="w-full h-auto rounded-lg shadow-md" />
+      <p class="mt-2 text-lg font-semibold" style="color: #C0C0C0;">Strawberry</p>
+    </div>
+
+    <div class="flex flex-col items-center">
+      <img src="Tropia/watermelon-strawberry.png" alt="Watermelon Strawberry" class="w-full h-auto rounded-lg shadow-md" />
+      <p class="mt-2 text-lg font-semibold" style="color: #C0C0C0;">Watermelon Strawberry</p>
+    </div>
+    
+  </div>
+</section>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1200,
+    easing: 'ease-in-out',
+    once: true
+  });
+
+  // Mobile menu toggle
+  document.getElementById("menu-btn").addEventListener("click", () => {
+    const menu = document.getElementById("mobile-menu");
+    const isHidden = menu.classList.contains("hidden");
+    if (isHidden) {
+      menu.classList.remove("hidden");
+    } else {
+      menu.classList.add("hidden");
+    }
+    document.getElementById("menu-btn").setAttribute("aria-expanded", isHidden);
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+intro!!!!!!!!
+
+html 
+<!-- INTRO ANIMATION -->
+<div id="intro">
+  <img src="BGT-co-logo-1000x1000.png" alt="BGT Logo" class="w-60 h-60 object-contain animate-logo" />
+</div>
+
+
+
+css
+
+
+/* Intro screen */
+#intro {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #000000, #1a1a1a);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+@keyframes logoZoomFade {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+    filter: blur(8px);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1.2);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+    filter: blur(4px);
+  }
+}
+
+.animate-logo {
+  animation: logoZoomFade 3s ease-in-out forwards;
+}
+
+
+JS!!!!!!
+
+
+  // Intro screen removal after animation
+  const intro = document.getElementById("intro");
+  if (intro) {
+    setTimeout(() => {
+      intro.style.display = "none";
+    }, 3000); // Match with animation duration
+  }

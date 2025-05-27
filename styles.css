@@ -1,0 +1,389 @@
+/*==================*/
+/* Base Variables   */
+/*==================*/
+:root {
+  --primary-yellow: #facc15;
+  --background-dark: #0b0c10;
+  --section-bg: #1f2833;
+  --text-glow: #ffd700;
+  --glass-blur: blur(12px);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --shadow-glow: 0 0 15px rgba(250, 196, 21, 0.5);
+}
+
+/*==================*/
+/* Base Styles      */
+/*==================*/
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--background-dark);
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/*==================*/
+/* Glassmorphism    */
+/*==================*/
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+  border-radius: 1rem;
+}
+
+/*==================*/
+/* Intro Animation  */
+/*==================*/
+@keyframes logoZoomFade {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+    filter: blur(8px);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1.2);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+    filter: blur(4px);
+  }
+}
+
+.animate-logo {
+  animation: logoZoomFade 3s ease-in-out forwards;
+}
+
+@keyframes logoBounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.bounce-logo {
+  animation: logoBounce 3s ease-in-out infinite;
+}
+
+/*==================*/
+/* Intro Screen     */
+/*==================*/
+#intro {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #000000, #1a1a1a);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/*==================*/
+/* Navbar Styles    */
+/*==================*/
+nav {
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+  color: var(--primary-yellow);
+  font-weight: 600;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#mobile-menu-button {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--primary-yellow);
+  cursor: pointer;
+}
+
+/*==================*/
+/* Mobile Styles    */
+/*==================*/
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+  }
+
+  nav ul.menu-expanded {
+    max-height: 500px;
+    padding: 1rem 0;
+  }
+
+  #mobile-menu-button {
+    display: block;
+  }
+}
+
+/*==================*/
+/* Dropdown Menu    */
+/*==================*/
+.dropdown {
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.5rem;
+  width: 10rem;
+  background-color: var(--section-bg);
+  border-radius: 0.375rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1000;
+}
+
+.dropdown-menu.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: var(--primary-yellow);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0.375rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-menu li a:hover {
+  background-color: var(--primary-yellow);
+  color: #000000;
+}
+
+/*==================*/
+/* Scroll Animations*/
+/*==================*/
+.fade-slide-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.fade-slide-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.fade-in-left {
+  opacity: 0;
+  animation: fadeInLeft 0.6s ease-out forwards;
+}
+
+.zoom-in {
+  opacity: 0;
+  animation: zoomIn 0.6s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/*==================*/
+/* Sticky Header    */
+/*==================*/
+header.sticky {
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/*==================*/
+/* Slideshow        */
+/*==================*/
+#slideshow {
+  position: relative;
+  width: 100%;
+  height: 300px; /* mobile default height */
+  overflow: hidden;
+}
+
+#slideshow img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;  /* fill width of container */
+  height: 100%; /* fill height of container */
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  flex-shrink: 0;
+}
+
+#slideshow img.active {
+  opacity: 1;
+}
+
+/* Larger heights on bigger screens */
+@media (min-width: 640px) {
+  #slideshow {
+    height: 500px;
+  }
+}
+
+@media (min-width: 768px) {
+  #slideshow {
+    height: 700px;
+  }
+}
+
+@media (min-width: 1024px) {
+  #slideshow {
+    height: 900px;
+  }
+}
+
+
+/*==================*/
+/* Products Section */
+/*==================*/
+#products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.product-slide {
+  width: %100;
+  height: %100;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  box-shadow: var(--shadow-glow);
+  background: transparent !important;
+  backdrop-filter: none !important;
+  transition: transform 0.3s ease;
+}
+
+.product-slide:hover .img-container img {
+  transform: scale(1);
+}
+
+.img-container {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  background-color: transparent !important;
+}
+
+.img-container img {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scale(0.8);
+  transition: transform 0.5s ease, opacity 1s ease-in-out;
+}
+
+/*==================*/
+/* Section Styling  */
+/*==================*/
+section {
+  background-color: var(--section-bg) !important;
+  padding: 3rem 1rem;
+}
+
+/*==================*/
+/* Title Styling    */
+/*==================*/
+.our-brands-title {
+  font-size: 3rem;
+  text-align: center;
+  font-weight: bold;
+  color: var(--text-glow);
+  text-shadow: 0 0 10px #fff000, 0 0 20px #f7e600;
+}
+
+/*==================*/
+/* Scrollbar Custom */
+/*==================*/
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--primary-yellow);
+  border-radius: 10px;
+}
